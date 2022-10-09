@@ -11,6 +11,7 @@ namespace Mirtyn.Mordor
             Random rndNames = new Random();
             Random rndTitles = new Random();
             Random rndLevel = new Random();
+            Random rndLevel2 = new Random();
 
             //for (uint ctr = 1; ctr <= 10; ctr++)
             //    Console.WriteLine($"{rnd.Next(),15:N0}");
