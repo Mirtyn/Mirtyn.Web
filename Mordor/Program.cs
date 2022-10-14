@@ -10,11 +10,22 @@ namespace Mirtyn.Mordor
         {
             var OrcGenerator = new OrcGenerator();
 
-            OrcGenerator.OrcGeneratorStart();
-            
+            var quit = false;
 
+            while(!quit)
+            {
+                //OrcGenerator.OrcGeneratorStart();
+                OrcGenerator.OrcGeneratorStart((int)DateTime.Now.Ticks);
 
-            Console.ReadKey();
+                var key = Console.ReadKey();
+
+                if (key.KeyChar == 'q' || key.KeyChar == 'Q')
+                {
+                    quit = true;
+                }
+
+                Console.Clear();
+            }
         }
 
         
@@ -23,49 +34,76 @@ namespace Mirtyn.Mordor
     }
     public class OrcCaptain
     {
-        public string name = string.Empty;
-        public string title = string.Empty;
-        public int level = 0;
-        public float maxhealth = 0;
-        public float health = 0;
-        //public object traits = new List<string>();
-        public string[] traits = {
-            string.Empty,
-            string.Empty,
-            string.Empty,
-            string.Empty,
-            string.Empty,
-            string.Empty,
-            string.Empty,
-            string.Empty,
-            string.Empty,
-            string.Empty
-        };
+        public string Name = string.Empty;
+        public string Title = string.Empty;
+        public int Level = 0;
+        public float MaxHealth = 0;
+        public float Health = 0;
+        public List<string> Traits = new List<string>();
+
+        //public string[] traits = {
+        //    string.Empty,
+        //    string.Empty,
+        //    string.Empty,
+        //    string.Empty,
+        //    string.Empty,
+        //    string.Empty,
+        //    string.Empty,
+        //    string.Empty,
+        //    string.Empty,
+        //    string.Empty
+        //};
+
+        public void DisplayOrc()
+        {
+            Console.WriteLine($"Orc captain : {Name} {Title}");
+
+            Console.WriteLine("Level:" + Level);
+
+            Console.WriteLine("Health: " + MaxHealth);
+
+            Console.WriteLine("Traits:");
+            //for (int i = 0; i < orc.traits.Count; i++)
+            //{
+            //    Console.WriteLine(orc.traits[i]);
+            //}
+
+            foreach (var trait in Traits)
+            {
+                Console.WriteLine(trait);
+            }
+
+            if (Traits.Count == 0)
+            {
+                Console.WriteLine("He doesn't have any traits.");
+            }
+
+            Console.WriteLine("\n\n");
+        }
     }
 
     public class OrcGenerator
     {
-        public void OrcGeneratorStart()
+        public void OrcGeneratorStart(int seed = 1)
         {
-            Random rnd = new Random();
+            Random rnd = new Random(seed);
 
             var orc = new OrcCaptain();
 
-            orc.name = OrcNameGenerator(rnd);
+            orc.Name = OrcNameGenerator(rnd);
 
-            orc.title = OrcTitleGenerator(rnd);
+            orc.Title = OrcTitleGenerator(rnd);
 
-            orc.level = OrcLevelGenerator(rnd);
+            orc.Level = OrcLevelGenerator(rnd);
 
-            orc.maxhealth = OrcHealthGenerator(orc.level);
+            orc.MaxHealth = OrcHealthGenerator(orc.Level);
 
-            orc.health = orc.maxhealth;
+            orc.Health = orc.MaxHealth;
 
-            orc.traits = OrcTraitsGenerator(rnd, orc.level);
+            orc.Traits = OrcTraitsGenerator(rnd, orc.Level);
 
 
-
-            DisplayOrc(orc, orc.traits);
+            orc.DisplayOrc();
         }
 
         public string OrcNameGenerator(Random rnd)
@@ -124,14 +162,14 @@ namespace Mirtyn.Mordor
             return maxhealth;
         }
 
-        public string[] OrcTraitsGenerator(Random rnd, int level)
+        public List<string> OrcTraitsGenerator(Random rnd, int level)
         {
             //  Lvl         1    2-3   4-6   7-8   9-11  12-13 14-16 17-18 19-21 22-23 24-25
             //  Num Traits  0    1     2     3     4     5     6     7     8     9     10
 
-            int LevelTraits = Convert.ToInt32(level / 2.5);
+            int levelTraits = Convert.ToInt32(level / 2.5);
 
-            var TraitsList = new List<string> {
+            var traitsList = new List<string> {
                 "Charge Attack",
                 "Rapid Attack",
                 "Leash Attack", 
@@ -149,57 +187,34 @@ namespace Mirtyn.Mordor
                 "Throwing Knifes"
             };
 
-            if (LevelTraits > TraitsList.Count)
+            if (levelTraits > traitsList.Count)
             {
-                LevelTraits = TraitsList.Count;
+                levelTraits = traitsList.Count;
             }
 
-            var Traits = new List<string>();
-            var TraitsCopy = new List<string>(TraitsList);
+            var traits = new List<string>();
+            var traitsCopy = new List<string>(traitsList);
 
-            for (var i = 0; Traits.Count < LevelTraits; i++)
+            for (var i = 0; traits.Count < levelTraits; i++)
             {
-                var index = rnd.Next(TraitsCopy.Count);
+                var index = rnd.Next(traitsCopy.Count);
 
-                var trait = TraitsCopy[index];
+                var trait = traitsCopy[index];
 
-                var exists = Traits.Exists(o => o == trait);
+                var exists = traits.Exists(o => o == trait);
 
                 if (!exists)
                 {
-                    Traits.Add(trait);
+                    traits.Add(trait);
 
-                    TraitsCopy.Remove(trait);
+                    traitsCopy.Remove(trait);
                 }
             }
-            string[] TraitsArray = Traits.ToArray();
+            //string[] TraitsArray = traits.ToArray();
 
-            return TraitsArray;
-        }
-        
-        public void DisplayOrc(OrcCaptain orc, string[] traits)
-        {
-            Console.WriteLine("\nOrc captains name and title:");
-            Console.WriteLine(orc.name);
-            Console.WriteLine(orc.title);
+            //return TraitsArray;
 
-            Console.WriteLine("\nOrc captains level:");
-            Console.WriteLine(orc.level);
-
-            Console.WriteLine("\nOrc captains health:\n");
-            Console.WriteLine(orc.maxhealth);
-
-            Console.WriteLine("Orc captains traits:");
-            for (int i = 0; i < orc.traits.Length; i++)
-            {
-                Console.WriteLine(orc.traits[i]);
-            }
-            if (orc.traits.Length == 0)
-            {
-                Console.WriteLine("He doesn't have any traits.");
-            }
-
-            Console.WriteLine("\n\n");
+            return traits;
         }
     }
 }
