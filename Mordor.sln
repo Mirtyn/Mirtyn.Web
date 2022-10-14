@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mirtyn.Mordor", "Mordor\Mirtyn.Mordor.csproj", "{68265B40-1C9B-4104-A17D-4F42D07888AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Steven.Morder", "Steven.Morder\Steven.Morder.csproj", "{CBF587FC-6420-4E93-A28B-9979A4D624B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Steven.Mordor", "Steven.Mordor\Steven.Mordor.csproj", "{CBF587FC-6420-4E93-A28B-9979A4D624B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
