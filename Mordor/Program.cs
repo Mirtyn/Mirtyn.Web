@@ -40,6 +40,11 @@ namespace Mirtyn.Mordor
         public float MaxHealth = 0;
         public float Health = 0;
         public List<string> Traits = new List<string>();
+        //public List<string> WeakOrStrong = new List<string>();
+        public List<string> Weaknesses = new List<string>();
+        public List<string> Immunities = new List<string>();
+        public List<string> Fears = new List<string>();
+
 
         //public string[] traits = {
         //    string.Empty,
@@ -62,6 +67,8 @@ namespace Mirtyn.Mordor
 
             Console.WriteLine("Health: " + MaxHealth);
 
+            Console.WriteLine("----------");
+
             Console.WriteLine("Traits:");
             //for (int i = 0; i < orc.traits.Count; i++)
             //{
@@ -76,6 +83,48 @@ namespace Mirtyn.Mordor
             if (Traits.Count == 0)
             {
                 Console.WriteLine("He doesn't have any traits.");
+            }
+
+            Console.WriteLine("----------");
+
+            Console.WriteLine("Fears: ");
+
+            foreach (var fear in Fears)
+            {
+                Console.WriteLine(fear);
+            }
+
+            if (Fears.Count == 0)
+            {
+                Console.WriteLine("He doesn't have any fears.");
+            }
+
+            Console.WriteLine("----------");
+
+            Console.WriteLine("Weaknesses: ");
+
+            foreach (var weakness in Weaknesses)
+            {
+                Console.WriteLine(weakness);
+            }
+
+            if (Weaknesses.Count == 0)
+            {
+                Console.WriteLine("He doesn't have any weaknesses.");
+            }
+
+            Console.WriteLine("----------");
+
+            Console.WriteLine("Immunities:");
+
+            foreach (var immunity in Immunities)
+            {
+                Console.WriteLine(immunity);
+            }
+
+            if (Immunities.Count == 0)
+            {
+                Console.WriteLine("He doesn't have any immunities.");
             }
 
             Console.WriteLine("\n\n");
@@ -102,6 +151,9 @@ namespace Mirtyn.Mordor
 
             orc.Traits = OrcTraitsGenerator(rnd, orc.Level);
 
+            OrcStrongOrWeak(rnd, orc);
+
+            //orc.Immunities = OrcImmunitiesGenerator();
 
             orc.DisplayOrc();
         }
@@ -216,5 +268,205 @@ namespace Mirtyn.Mordor
 
             return traits;
         }
+
+        public void OrcStrongOrWeak(Random rnd, OrcCaptain orc)
+        {
+            var a = 1 + rnd.NextDouble() * 3.75;
+
+            //if (a < 1)
+            //{
+            //    a = 1;
+            //}
+
+            var chance = orc.Level * a;
+
+            var strenghtsOrWeaknessList = new List<string> {
+                "Fire",
+                "Poison",
+                "Ice",
+                "BaleFire"
+            };
+
+            //var strenghtsOrWeaknessListCopy = new List<string>(strenghtsOrWeaknessList);
+            //var ctr = 0;
+            var immunities = new List<string>();
+            var weaknesses = new List<string>();
+            var fears = new List<string>();
+
+            if (chance <= 33)
+            {
+                for (var i = 0; i < strenghtsOrWeaknessList.Count; i++)
+                {
+                    var chancewhere = rnd.Next(0, 101);
+
+                    var trait = strenghtsOrWeaknessList[i];
+
+                    if (chancewhere <= 40)
+                    {
+                        //var index = rnd.Next(strenghtsOrWeaknessListCopy.Count);
+
+                        //var exists = ctr.Exists(o => o == trait);
+
+                        //ctr = ctr++;
+
+                        weaknesses.Add(trait);
+
+                        //strenghtsOrWeaknessListCopy.Remove(trait);
+
+                        //if (!exists)
+                        //{
+                        //    ctr.Add(trait);
+
+                        //    strenghtsOrWeaknessListCopy.Remove(trait);
+                        //}
+                    }
+                    else if (chancewhere <= 70)
+                    {
+                        //var trait = strenghtsOrWeaknessListCopy[ctr];
+
+                        //ctr = ctr++;
+
+                        fears.Add(trait);
+
+                        //strenghtsOrWeaknessListCopy.Remove(trait);
+                    }
+                    else if (chancewhere <= 92)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        //var trait = strenghtsOrWeaknessListCopy[ctr];
+
+                        //ctr = ctr++;
+
+                        immunities.Add(trait);
+
+                        //strenghtsOrWeaknessListCopy.Remove(trait);
+                    }
+                }
+            }
+            
+            else if (chance <= 66)
+            {
+                for (var i = 0; i < strenghtsOrWeaknessList.Count; i++)
+                {
+                    var chancewhere = rnd.Next(0, 101);
+
+                    if (chancewhere <= 30)
+                    {
+                        //var index = rnd.Next(strenghtsOrWeaknessListCopy.Count);
+
+                        var trait = strenghtsOrWeaknessList[i];
+
+                        //var exists = ctr.Exists(o => o == trait);
+
+                        //ctr = ctr++;
+
+                        weaknesses.Add(trait);
+
+                        //strenghtsOrWeaknessListCopy.Remove(trait);
+
+                        //if (!exists)
+                        //{
+                        //    ctr.Add(trait);
+
+                        //    strenghtsOrWeaknessListCopy.Remove(trait);
+                        //}
+                    }
+                    else if (chancewhere <= 45)
+                    {
+                        var trait = strenghtsOrWeaknessList[i];
+
+                        //ctr = ctr++;
+
+                        fears.Add(trait);
+
+                        //strenghtsOrWeaknessListCopy.Remove(trait);
+                    }
+                    else if (chancewhere <= 80)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        var trait = strenghtsOrWeaknessList[i];
+
+                        //ctr = ctr++;
+
+                        immunities.Add(trait);
+
+                        //strenghtsOrWeaknessListCopy.Remove(trait);
+                    }
+                }
+            }
+            
+            else
+            {
+                for (var i = 0; i < strenghtsOrWeaknessList.Count; i++)
+                {
+                    var chancewhere = rnd.Next(0, 101);
+
+                    if (chancewhere <= 20)
+                    {
+                        //var index = rnd.Next(strenghtsOrWeaknessListCopy.Count);
+
+                        var trait = strenghtsOrWeaknessList[i];
+
+                        //var exists = ctr.Exists(o => o == trait);
+
+                        //ctr = ctr++;
+
+                        weaknesses.Add(trait);
+
+                        //strenghtsOrWeaknessListCopy.Remove(trait);
+
+                        //if (!exists)
+                        //{
+                        //    ctr.Add(trait);
+
+                        //    strenghtsOrWeaknessListCopy.Remove(trait);
+                        //}
+                    }
+                    else if (chancewhere <= 25)
+                    {
+                        var trait = strenghtsOrWeaknessList[i];
+
+                        //ctr = ctr++;
+
+                        fears.Add(trait);
+
+                        //strenghtsOrWeaknessListCopy.Remove(trait);
+                    }
+                    else if (chancewhere <= 75)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        var trait = strenghtsOrWeaknessList[i];
+
+                        //ctr = ctr++;
+
+                        immunities.Add(trait);
+
+                        //strenghtsOrWeaknessListCopy.Remove(trait);
+                    }
+                }
+            }
+            orc.Fears = fears;
+            orc.Weaknesses = weaknesses;
+            orc.Immunities = immunities;
+        }
+
+        //public void OrcImmunitiesGenerator()
+        //{
+
+        //}
+
+        //public void OrcFearsGenerator()
+        //{
+
+        //}
     }
 }
