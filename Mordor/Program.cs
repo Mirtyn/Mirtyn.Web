@@ -191,7 +191,8 @@ namespace Mirtyn.Mordor
                 "Child Eater",
                 "The Mindless",
                 "Uber Brain",
-                "Fire Belly"
+                "Fire Belly",
+                "Black Heart"
             };
             int titlesIndex = rnd.Next(titles.Length);
             string title = (titles[titlesIndex]);
