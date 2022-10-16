@@ -189,7 +189,8 @@ namespace Mirtyn.Mordor
                 "Itchy Feet",
                 "The Eater",
                 "Child Eater",
-                "The Mindless"
+                "The Mindless",
+                "Uber Brain"
             };
             int titlesIndex = rnd.Next(titles.Length);
             string title = (titles[titlesIndex]);
