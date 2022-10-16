@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Steven.Morder
 {
@@ -10,21 +12,52 @@ namespace Steven.Morder
 
             var orcGeneratorSettings = new OrcGeneratorSettings
             {
-                Count = 8,
+                Count = 2,
                 OrcType = OrcType.Warlord,
-                MinLevel = 24,
-                MaxLevel = 64,
+                MinLevel = 1,
+                MaxLevel = 10,
             };
 
-            var orcs = orcGenerator.Generate(orcGeneratorSettings);
+            var orcBattleSimulator = new OrcBattleSimulator();
 
-            foreach(var orc in orcs)
+            var quit = false;
+            var attack = false;
+            List<Orc> orcs = null;
+
+            while (!quit)
             {
-                orc.ConsoleWrite();
-            }
+                if(!attack)
+                {
+                    orcs = orcGenerator.Generate(orcGeneratorSettings).ToList();
 
-            Console.WriteLine("Press a key to quit");
-            Console.ReadKey(false);
+                    foreach (var orc in orcs)
+                    {
+                        orc.WriteInfoToConsole();
+                    }
+                }
+                else
+                {
+                    orcBattleSimulator.Attack(orcs);
+                    orcBattleSimulator.WriteLifeToConsole(orcs);
+
+                    attack = false;
+                }
+
+                var key = Console.ReadKey();
+
+                if (key.KeyChar == 'q' || key.KeyChar == 'Q')
+                {
+                    quit = true;
+                }
+
+                if (key.KeyChar == 'a' || key.KeyChar == 'A')
+                {
+                    attack = true;
+                }
+
+                Console.Clear();
+                Console.WriteLine("Press 'q' to quit, 'a' to attack or any other key to continue");
+            }
         }
     }
 }
