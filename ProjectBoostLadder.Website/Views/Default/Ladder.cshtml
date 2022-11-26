@@ -1,0 +1,35 @@
+﻿@model LadderViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-12 col-md-6 col-lg-9">
+        @if(Model.Ladder != null)
+        {
+            <h4>Ladder @Model.Ladder.Version</h4>
+            <ol>
+                @foreach (var entry in Model.Ladder.Entries)
+               {
+                    <li>@entry.Name: @entry.TimeDescription() sec.</li>
+               }
+            </ol>
+        }
+        <div>
+            <a class="btn btn-primary" href="/">Back</a>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3">
+        @if(Model.SavedLadderVersions.Count > 0)
+        {
+            <h4>Other ladders</h4>
+            <ul>
+                @foreach (var ladder in Model.SavedLadderVersions)
+               {
+                    <li><a href="/ladder/@ladder">@ladder</a></li>
+               }
+            </ul>
+        }
+    </div>
+</div>

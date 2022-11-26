@@ -157,3 +157,5 @@ $RECYCLE.BIN/
 
 *.TMP
 /.vs
+/ProjectBoostLadder.Website.Published
+/ProjectBoostLadder.Website/.config
