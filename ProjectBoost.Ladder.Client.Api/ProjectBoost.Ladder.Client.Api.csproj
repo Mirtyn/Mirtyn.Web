@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnumExtensions.cs" />
     <Compile Include="Ladder.cs" />
     <Compile Include="LadderClientApi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

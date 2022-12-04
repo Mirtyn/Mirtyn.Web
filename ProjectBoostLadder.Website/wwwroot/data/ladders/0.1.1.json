@@ -1,0 +1,108 @@
+{
+  "Version": "0.1.1",
+  "Entries": [],
+  "FlagEntryDictionary": {
+    "Competitive": [
+      {
+        "CreatedUtc": "2022-12-04T17:18:06.9017772Z",
+        "Name": "Steven TTT​",
+        "Time": 33.2,
+        "TimeInSeconds": 33.2,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T16:23:12.5186189Z",
+        "Name": "Steven​",
+        "Time": 34.23,
+        "TimeInSeconds": 34.23,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T17:21:00.7786859Z",
+        "Name": "Steven TTTT​",
+        "Time": 35.07,
+        "TimeInSeconds": 35.07,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T16:16:34.9643981Z",
+        "Name": "Steven The Best​",
+        "Time": 36.08,
+        "TimeInSeconds": 36.08,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T14:50:36.2864222Z",
+        "Name": "Steven HC​",
+        "Time": 37.57,
+        "TimeInSeconds": 37.57,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T17:32:44.1295177Z",
+        "Name": "Steven HCCC​",
+        "Time": 37.73692,
+        "TimeInSeconds": 37.73692,
+        "Flag": 5
+      },
+      {
+        "CreatedUtc": "2022-12-04T14:48:31.8153652Z",
+        "Name": "Steven Prime​",
+        "Time": 41.44,
+        "TimeInSeconds": 41.44,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T16:38:22.9766742Z",
+        "Name": "Steven​",
+        "Time": 42.18,
+        "TimeInSeconds": 42.18,
+        "Flag": 1
+      }
+    ],
+    "CompetitiveRealLanding": [
+      {
+        "CreatedUtc": "2022-12-04T18:13:30.5965989Z",
+        "Name": "Mirty​",
+        "Time": 24.89682,
+        "TimeInSeconds": 24.89682,
+        "Flag": 7
+      },
+      {
+        "CreatedUtc": "2022-12-04T18:10:21.8187302Z",
+        "Name": "Mirty​",
+        "Time": 30.1548,
+        "TimeInSeconds": 30.1548,
+        "Flag": 7
+      },
+      {
+        "CreatedUtc": "2022-12-04T18:01:13.6392665Z",
+        "Name": "Steven %%​",
+        "Time": 30.2532,
+        "TimeInSeconds": 30.2532,
+        "Flag": 7
+      },
+      {
+        "CreatedUtc": "2022-12-04T17:42:43.9837132Z",
+        "Name": "Steven KKK​",
+        "Time": 31.90433,
+        "TimeInSeconds": 31.90433,
+        "Flag": 7
+      },
+      {
+        "CreatedUtc": "2022-12-04T17:55:05.7023259Z",
+        "Name": "Steven @@​",
+        "Time": 32.46735,
+        "TimeInSeconds": 32.46735,
+        "Flag": 7
+      },
+      {
+        "CreatedUtc": "2022-12-04T17:30:52.422999Z",
+        "Name": "Steven $$​",
+        "Time": 40.96185,
+        "TimeInSeconds": 40.96185,
+        "Flag": 7
+      }
+    ]
+  }
+}

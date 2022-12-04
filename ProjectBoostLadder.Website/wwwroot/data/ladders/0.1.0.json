@@ -1,0 +1,400 @@
+{
+  "Version": "0.1.0",
+  "Entries": null,
+  "FlagEntryDictionary": {
+    "Competitive": [
+      {
+        "CreatedUtc": "2022-12-04T17:45:10.1097038Z",
+        "Name": "Mirty​",
+        "Time": 15.53,
+        "TimeInSeconds": 15.53,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T17:57:34.0218007Z",
+        "Name": "Mirty​",
+        "Time": 15.57,
+        "TimeInSeconds": 15.57,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T16:14:08.3989439Z",
+        "Name": "romeo​",
+        "Time": 16.48,
+        "TimeInSeconds": 16.48,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T16:07:01.2648917Z",
+        "Name": "romeo​",
+        "Time": 16.93,
+        "TimeInSeconds": 16.93,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T15:48:57.8819852Z",
+        "Name": "romeo​",
+        "Time": 17.07,
+        "TimeInSeconds": 17.07,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T17:56:43.5395507Z",
+        "Name": "Mirty​",
+        "Time": 17.64,
+        "TimeInSeconds": 17.64,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T11:49:41.6834267Z",
+        "Name": "romeo​",
+        "Time": 17.73,
+        "TimeInSeconds": 17.73,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-03T15:32:31.3377859Z",
+        "Name": "Mirty​",
+        "Time": 18.62,
+        "TimeInSeconds": 18.62,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-26T18:45:30.2748587Z",
+        "Name": "Mirtyn​",
+        "Time": 18.66,
+        "TimeInSeconds": 18.66,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T11:45:56.6096366Z",
+        "Name": "romeo​",
+        "Time": 18.84,
+        "TimeInSeconds": 18.84,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-27T11:37:53.9559118Z",
+        "Name": "Mirtyn​",
+        "Time": 19.38,
+        "TimeInSeconds": 19.38,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T15:54:39.7089707Z",
+        "Name": "romeo ​",
+        "Time": 19.4,
+        "TimeInSeconds": 19.4,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T16:02:28.3799529Z",
+        "Name": "romeo​",
+        "Time": 19.83,
+        "TimeInSeconds": 19.83,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-27T11:42:30.3391601Z",
+        "Name": "Mirty​",
+        "Time": 20.5,
+        "TimeInSeconds": 20.5,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-27T11:38:37.1207627Z",
+        "Name": "Mirty​",
+        "Time": 21.25,
+        "TimeInSeconds": 21.25,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-26T19:26:03.1298699Z",
+        "Name": "Mirtyn​",
+        "Time": 21.43,
+        "TimeInSeconds": 21.43,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T11:43:20.5079374Z",
+        "Name": "romeo​",
+        "Time": 22.95,
+        "TimeInSeconds": 22.95,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-03T19:07:57.2998542Z",
+        "Name": "romeo​",
+        "Time": 23.98,
+        "TimeInSeconds": 23.98,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T12:36:57.4286632Z",
+        "Name": "cyrano vanparys​",
+        "Time": 24.06,
+        "TimeInSeconds": 24.06,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-03T15:26:55.687828Z",
+        "Name": "romeo​",
+        "Time": 24.4,
+        "TimeInSeconds": 24.4,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T12:34:00.9278661Z",
+        "Name": "cyrano vanparys​",
+        "Time": 24.75,
+        "TimeInSeconds": 24.75,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-26T20:19:46.229452Z",
+        "Name": "Mirtyn​",
+        "Time": 24.89,
+        "TimeInSeconds": 24.89,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-26T20:01:12.5402991Z",
+        "Name": "Mirtyn​",
+        "Time": 25.07,
+        "TimeInSeconds": 25.07,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-27T17:00:13.084841Z",
+        "Name": "Steven​",
+        "Time": 25.43,
+        "TimeInSeconds": 25.43,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-03T19:11:07.9450099Z",
+        "Name": "romeo​",
+        "Time": 25.76,
+        "TimeInSeconds": 25.76,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T17:45:11.2670708Z",
+        "Name": "Steven UUU​",
+        "Time": 26.76,
+        "TimeInSeconds": 26.76,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T17:53:05.151167Z",
+        "Name": "Steven UUUUU​",
+        "Time": 26.76,
+        "TimeInSeconds": 26.76,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-27T11:37:19.71594Z",
+        "Name": "Mirtyn​",
+        "Time": 29.48,
+        "TimeInSeconds": 29.48,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-27T17:05:52.2103291Z",
+        "Name": "Steven​",
+        "Time": 30.06,
+        "TimeInSeconds": 30.06,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-27T11:36:35.580259Z",
+        "Name": "Mirtyn​",
+        "Time": 30.25,
+        "TimeInSeconds": 30.25,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-27T19:59:11.6800003Z",
+        "Name": "Mirty​",
+        "Time": 31.39,
+        "TimeInSeconds": 31.39,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-03T15:23:57.6238285Z",
+        "Name": "romeo​",
+        "Time": 31.56,
+        "TimeInSeconds": 31.56,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-27T11:40:51.3626598Z",
+        "Name": "Mirty​",
+        "Time": 31.63,
+        "TimeInSeconds": 31.63,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-26T18:19:42.5402193Z",
+        "Name": "Mirtyn​",
+        "Time": 31.92,
+        "TimeInSeconds": 31.92,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-27T13:56:58.1698659Z",
+        "Name": "Steven​",
+        "Time": 32.25,
+        "TimeInSeconds": 32.25,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T16:13:10.0340403Z",
+        "Name": "Steven Unity Test​",
+        "Time": 32.32,
+        "TimeInSeconds": 32.32,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-03T15:17:56.2663851Z",
+        "Name": "romeo​",
+        "Time": 33.63,
+        "TimeInSeconds": 33.63,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-26T18:41:19.9073827Z",
+        "Name": "steven​",
+        "Time": 33.74,
+        "TimeInSeconds": 33.74,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-26T18:05:41.4634269Z",
+        "Name": "Steven​",
+        "Time": 33.89,
+        "TimeInSeconds": 33.89,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-03T18:32:44.3912114Z",
+        "Name": "cyrano vanparys​",
+        "Time": 37.44,
+        "TimeInSeconds": 37.44,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-27T13:59:56.2231442Z",
+        "Name": "Steven​",
+        "Time": 40.58,
+        "TimeInSeconds": 40.58,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-27T11:40:08.5323058Z",
+        "Name": "Mirty​",
+        "Time": 40.7,
+        "TimeInSeconds": 40.7,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-04T12:38:08.8696239Z",
+        "Name": "Steven Try-out​",
+        "Time": 43.54,
+        "TimeInSeconds": 43.54,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-27T11:41:53.4251533Z",
+        "Name": "Mirty​",
+        "Time": 44.94,
+        "TimeInSeconds": 44.94,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-26T20:09:24.8217904Z",
+        "Name": "Mirtyn​",
+        "Time": 45.88,
+        "TimeInSeconds": 45.88,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-26T20:12:51.9059416Z",
+        "Name": "romeo​",
+        "Time": 53.86,
+        "TimeInSeconds": 53.86,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-27T11:29:34.7843095Z",
+        "Name": "Steven​",
+        "Time": 55.19,
+        "TimeInSeconds": 55.19,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-26T19:22:29.8871428Z",
+        "Name": "Mirtyn​",
+        "Time": 62.72,
+        "TimeInSeconds": 62.72,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-26T19:22:48.2990646Z",
+        "Name": "Steven​",
+        "Time": 62.72,
+        "TimeInSeconds": 62.72,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-03T18:27:04.7949451Z",
+        "Name": "cyrano vanparys [thefoxguy]​",
+        "Time": 67.23,
+        "TimeInSeconds": 67.23,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-03T18:27:17.1653305Z",
+        "Name": "cyrano vanparys ​",
+        "Time": 67.23,
+        "TimeInSeconds": 67.23,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-12-03T18:27:29.4038015Z",
+        "Name": "cyrano​",
+        "Time": 67.23,
+        "TimeInSeconds": 67.23,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-27T11:24:55.2777628Z",
+        "Name": "Steven​",
+        "Time": 78.0,
+        "TimeInSeconds": 78.0,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-26T20:11:24.9027746Z",
+        "Name": "romeo ​",
+        "Time": 87.76,
+        "TimeInSeconds": 87.76,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-27T11:34:35.482531Z",
+        "Name": "Steven K​",
+        "Time": 95.54,
+        "TimeInSeconds": 95.54,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2022-11-26T20:18:41.8820237Z",
+        "Name": "florianpro​",
+        "Time": 196.56,
+        "TimeInSeconds": 196.56,
+        "Flag": 1
+      }
+    ]
+  }
+}

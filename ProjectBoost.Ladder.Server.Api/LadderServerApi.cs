@@ -54,7 +54,26 @@ namespace ProjectBoostLadder
                 return null;
             }
 
-            return JsonConvert.DeserializeObject<Ladder>(File.ReadAllText(path));
+            var ladder = JsonConvert.DeserializeObject<Ladder>(File.ReadAllText(path));
+
+            ConvertLadder(ladder);
+
+            return ladder;
+        }
+
+        private void ConvertLadder(Ladder ladder)
+        {
+            if (ladder.Entries != null && ladder.Entries.Count > 0 && (ladder.FlagEntryDictionary == null || ladder.FlagEntryDictionary.Count == 0))
+            {
+                ladder.FlagEntryDictionary = new Dictionary<Ladder.LadderFlag, List<Ladder.Entry>>();
+
+                foreach (var entry in ladder.Entries)
+                {
+                    ladder.AddUniqueEntry(entry);
+                }
+
+                ladder.Entries = null;
+            }
         }
 
         public LadderClientApi.PostResponse Save(Ladder.Entry entry, string version)
@@ -69,6 +88,10 @@ namespace ProjectBoostLadder
             if (ladder == null)
             {
                 ladder = new Ladder { Version = version };
+            }
+            else
+            {
+                ConvertLadder(ladder);
             }
 
             var response = new LadderClientApi.PostResponse

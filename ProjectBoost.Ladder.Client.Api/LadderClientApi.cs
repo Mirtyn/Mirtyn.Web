@@ -57,7 +57,9 @@ namespace ProjectBoostLadder
                 var values = new Dictionary<string, string>
                     {
                        { "name", entry.Name },
-                       { "time", entry.TimeInSeconds.ToString("0.00", CultureInfo.InvariantCulture) },
+                       //{ "time", entry.TimeInSeconds.ToString("0.00", CultureInfo.InvariantCulture) },
+                       { "time", entry.TimeInSeconds.ToString() },
+                       { "flag", ((int)entry.Flag).ToString(CultureInfo.InvariantCulture) },
                        { "version", version },
                     };
 

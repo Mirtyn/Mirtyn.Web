@@ -1,4 +1,24 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+$(function () {
 
-// Write your JavaScript code.
+	window.setTimeout(function ()
+	{
+		$('.vertical-accordion').css('opacity', '1');
+	}, 500);
+
+	$('.vertical-accordion .collapse').on('click', function ()
+	{
+		var e = $('.vertical-accordion > div');
+
+		if (e.hasClass('expand'))
+		{
+			e.removeClass('expand');
+
+			$(this).addClass('expand');
+		}
+		else
+		{
+			$(this).addClass('expand');
+		}
+	})
+})

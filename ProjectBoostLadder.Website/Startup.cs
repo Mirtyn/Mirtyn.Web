@@ -4,8 +4,10 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NLog;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,6 +18,8 @@ namespace ProjectBoostLadder
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            
+            LogManager.LoadConfiguration("nlog.config");
         }
 
         public IConfiguration Configuration { get; }
@@ -50,11 +54,6 @@ namespace ProjectBoostLadder
 
             app.UseEndpoints(endpoints =>
             {
-                //endpoints.MapControllerRoute(
-                //    name: "ladder",
-                //    pattern: "ladder/{action=Index}/{id?}",
-                //    defaults: new { controller = "Ladder", action = "Index" });
-
                 endpoints.MapControllerRoute(
                     name: "{controller=Default}/{action=Index}/{id?}",
                     pattern: "{controller=Default}/{action=Index}/{id?}");

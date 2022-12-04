@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using ProjectBoost.Ladder.Website.Controllers.Abstracts;
 using ProjectBoostLadder.Models;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ProjectBoostLadder.Controllers
 {
-    public class DefaultController : ProjectController<DefaultController>
+    public class DefaultController : AbstractProjectController<DefaultController>
     {
         public IActionResult Index()
         {

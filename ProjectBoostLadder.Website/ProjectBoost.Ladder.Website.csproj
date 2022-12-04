@@ -13,18 +13,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="nlog.config" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="NLog" Version="5.1.0" />
     <PackageReference Include="NLog.Web.AspNetCore" Version="5.1.5" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ProjectBoost.Ladder.Client.Api\ProjectBoost.Ladder.Client.Api.csproj" />
     <ProjectReference Include="..\ProjectBoost.Ladder.Server.Api\ProjectBoost.Ladder.Server.Api.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Ladder\" />
   </ItemGroup>
 
 </Project>

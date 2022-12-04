@@ -1,15 +1,14 @@
 ﻿@model LadderPostEntryViewModel
 
 @{
-    ViewData["Title"] = "Post Ladder";
+    ViewData["Title"] = "Post Test";
 }
 
 <div class="row">
     <div class="col-12 col-md-6 col-lg-9">
-        <form method="post" action="/ladder/post">
-            Name:  <input asp-for="Name" /> <br />
-            Time:  <input asp-for="TimeInSeconds" /> <br />
-            <button class="btn btn-primary" type="submit">Submit</button>
-        </form>
+        <a class="btn btn-primary" href="@Url.Action("PostTestV011")">Test v0.1.1</a>
+    </div>
+    <div class="col-12 col-md-6 col-lg-9">
+        <a class="btn btn-primary" href="@Url.Action("PostTestV010")">Test v0.1.0</a>
     </div>
 </div>

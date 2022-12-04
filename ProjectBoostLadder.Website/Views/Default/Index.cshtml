@@ -1,21 +1,12 @@
 ﻿@model LadderViewModel
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Ladder" + Model.Ladder.Version;
 }
 
 <div class="row">
     <div class="col-12 col-md-6 col-lg-9">
-        @if(Model.Ladder != null)
-        {
-            <h4>Current ladder @Model.Ladder.Version</h4>
-            <ol>
-                @foreach (var entry in Model.Ladder.Entries)
-               {
-                    <li>@entry.Name: @entry.TimeDescription() sec.</li>
-               }
-            </ol>
-        }
+        <partial name="LadderPartial">
     </div>
     <div class="col-12 col-md-6 col-lg-3">
         @if(Model.SavedLadderVersions.Count > 0)
@@ -28,5 +19,6 @@
                }
             </ul>
         }
+        <partial name="DownloadsPartial">
     </div>
 </div>

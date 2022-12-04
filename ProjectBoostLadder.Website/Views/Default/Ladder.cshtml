@@ -6,16 +6,7 @@
 
 <div class="row">
     <div class="col-12 col-md-6 col-lg-9">
-        @if(Model.Ladder != null)
-        {
-            <h4>Ladder @Model.Ladder.Version</h4>
-            <ol>
-                @foreach (var entry in Model.Ladder.Entries)
-               {
-                    <li>@entry.Name: @entry.TimeDescription() sec.</li>
-               }
-            </ol>
-        }
+        <partial name="LadderPartial">
         <div>
             <a class="btn btn-primary" href="/">Back</a>
         </div>
@@ -31,5 +22,6 @@
                }
             </ul>
         }
+        <partial name="DownloadsPartial">
     </div>
 </div>
