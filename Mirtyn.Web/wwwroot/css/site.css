@@ -98,3 +98,9 @@ body {
     background-size:cover;
     min-height:240px;
 }
+
+.col-rounded-shooter {
+    background-image: url('/content/images/rounded-shooter.jpg');
+    background-size: cover;
+    min-height: 240px;
+}
