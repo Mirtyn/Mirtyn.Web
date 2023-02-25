@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProjectBoost.Ladder.Client.Api\ProjectBoost.Ladder.Client.Api.csproj" />
-    <ProjectReference Include="..\ProjectBoost.Ladder.Server.Api\ProjectBoost.Ladder.Server.Api.csproj" />
   </ItemGroup>
 
 </Project>

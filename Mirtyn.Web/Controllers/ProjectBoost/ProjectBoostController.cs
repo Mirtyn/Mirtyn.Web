@@ -33,7 +33,7 @@ namespace Mirtyn.Web
         [Route("project-boost/ladder")]
         public IActionResult Index()
         {
-            var service = new LadderServerApi(_dataPath);
+            var service = new ProjectBoostServerApi(_dataPath);
 
             var ladder = service.LoadLatest();
 
@@ -62,7 +62,7 @@ namespace Mirtyn.Web
         [Route("project-boost/ladder/{version}")]
         public IActionResult Ladder(string version)
         {
-            var service = new LadderServerApi(_dataPath);
+            var service = new ProjectBoostServerApi(_dataPath);
 
             var ladder = service.Load(version);
 
@@ -120,7 +120,7 @@ namespace Mirtyn.Web
         {
             Logger.LogDebug("PostV010: " + entry.Flag.ToString());
 
-            var service = new LadderServerApi(_dataPath);
+            var service = new ProjectBoostServerApi(_dataPath);
 
             var response = service.Save(entry, "0.1.0");
 
@@ -136,7 +136,7 @@ namespace Mirtyn.Web
 
             Logger.LogDebug("entry.Flag: " + entry.Flag.ToString());
 
-            var service = new LadderServerApi(_dataPath);
+            var service = new ProjectBoostServerApi(_dataPath);
 
             var response = service.Save(entry, "0.1.1");
 

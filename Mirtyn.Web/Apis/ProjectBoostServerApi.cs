@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using ProjectBoost;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -8,13 +9,13 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace ProjectBoost
+namespace Mirtyn.Web
 {
-    public class LadderServerApi
+    public class ProjectBoostServerApi
     {
         private string StorePath;
 
-        public LadderServerApi(string storePath)
+        public ProjectBoostServerApi(string storePath)
 
         {
             StorePath = storePath;
@@ -119,7 +120,7 @@ namespace ProjectBoost
 
         public static Version VersionStringToVersion(string versionString)
         {
-            if(Version.TryParse(StripNonNumeric(versionString), out System.Version version))
+            if (Version.TryParse(StripNonNumeric(versionString), out Version version))
             {
                 return version;
             }
