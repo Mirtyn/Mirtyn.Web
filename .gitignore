@@ -157,5 +157,8 @@ $RECYCLE.BIN/
 
 *.TMP
 /.vs
-/ProjectBoostLadder.Website.Published
-/ProjectBoostLadder.Website/.config
+
+/mirtyn.be.published
+/Mirtyn.Web/logs
+/Mirtyn.Web/wwwroot/data/project-boost
+/Mirtyn.Web.Published

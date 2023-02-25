@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace ProjectBoost
+namespace Mirtyn.Web
 {
-    internal static class EnumExtensions
+    public static class EnumExtensions
     {
         public static T Next<T>(this T enumValue) where T : struct
         {
