@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProjectBoost.Ladder.Client.Api\ProjectBoost.Ladder.Client.Api.csproj" />
+    <ProjectReference Include="..\RoundedShooter.Ladder.Client.Api\RoundedShooter.Ladder.Client.Api.csproj" />
   </ItemGroup>
 
 </Project>

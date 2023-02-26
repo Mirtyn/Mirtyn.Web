@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectBoost.Ladder.Client.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mirtyn.Web", "Mirtyn.Web\Mirtyn.Web.csproj", "{F3948AD5-B352-41E7-89A9-79C86F61420B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoundedShooter.Ladder.Client.Api", "RoundedShooter.Ladder.Client.Api\RoundedShooter.Ladder.Client.Api.csproj", "{74D61634-EE72-4A0D-B8A6-702CCBC102FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F3948AD5-B352-41E7-89A9-79C86F61420B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3948AD5-B352-41E7-89A9-79C86F61420B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3948AD5-B352-41E7-89A9-79C86F61420B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74D61634-EE72-4A0D-B8A6-702CCBC102FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74D61634-EE72-4A0D-B8A6-702CCBC102FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74D61634-EE72-4A0D-B8A6-702CCBC102FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74D61634-EE72-4A0D-B8A6-702CCBC102FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
