@@ -17,35 +17,31 @@ namespace Mirtyn.Web
     [Route("rounded-shooter")]
     public class RoundedShooterController : AbstractProjectController<RoundedShooterController>
     {
-        private string _dataPath;
+        private RoundedShooterServerApi _service;
 
         public RoundedShooterController()
         {
-            _dataPath = Project.MapPath("~/data/rounded-shooter/ladders/");
+            _service = new RoundedShooterServerApi(Project.MapPath("~/data/rounded-shooter/ladders/"));
         }
 
         [Route("")]
         [Route("ladder")]
         public IActionResult Index()
         {
-            var service = new ProjectBoostServerApi(_dataPath);
+            var ladder = _service.LoadLatest();
 
-            var ladder = service.LoadLatest();
-
-            return RedirectToAction("Ladder", new { version = ladder.Version });
+            return RedirectToAction("Ladder", new { version = ladder != null ? ladder.Version : new Version() });
         }
 
         [Route("ladder/{version}")]
         public IActionResult Ladder(string version)
         {
-            var service = new ProjectBoostServerApi(_dataPath);
+            var ladder = _service.Load(version);
 
-            var ladder = service.Load(version);
-
-            var model = new LadderViewModel
+            var model = new LadderViewModel<RoundedShooter.Ladder>
             {
                 Ladder = ladder,
-                SavedLadderVersions = service.EnumerateSavedLadderVersions().ToList(),
+                SavedLadderVersions = _service.EnumerateSavedLadderVersions().ToList(),
             };
 
             if (model.Ladder != null)
@@ -90,9 +86,7 @@ namespace Mirtyn.Web
 
             Logger.LogDebug("entry.Flag: " + entry.Flag.ToString());
 
-            var service = new RoundedShooterServerApi(_dataPath);
-
-            var response = service.Save(entry, "0.2.0");
+            var response = _service.Save(entry, "0.2.0");
 
             return Json(response);
         }

@@ -11,4 +11,10 @@ namespace Mirtyn.Web
         public Ladder Ladder { get; set; }
         public List<Version> SavedLadderVersions { get; set; }
     }
+
+    public class LadderViewModel<TLadder>
+    {
+        public TLadder? Ladder { get; set; }
+        public List<Version>? SavedLadderVersions { get; set; }
+    }
 }

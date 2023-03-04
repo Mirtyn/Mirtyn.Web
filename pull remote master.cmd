@@ -1,2 +1,2 @@
-git pull https://github.com/Mirtyn/Rounded-Shooter master
+git pull https://github.com/Mirtyn/Mirtyn.Mordor master
 PAUSE

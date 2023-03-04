@@ -1,7 +1,7 @@
-﻿@model LadderViewModel
+﻿@model LadderViewModel<RoundedShooter.Ladder>
 
 @{ 
-    void DisplayLadder(string title, IEnumerable<Ladder.Entry> entries)
+    void DisplayLadder(string title, IEnumerable<RoundedShooter.Ladder.Entry> entries)
     {
         <h5>@title</h5>
         if(entries != null)
@@ -10,7 +10,7 @@
                 @foreach (var entry in entries)
                 {
                     <li>
-                        @entry.Name: @entry.TimeDescription() sec. @(entry.Flag.Has(Ladder.EntryFlag.OneLife) ? "(HC)" : string.Empty)
+                        @entry.Name: @entry.PointsDescription() pts.
                     </li>
                 }
             </ol>
@@ -19,27 +19,19 @@
 }
 
 <div class="row">
-    <div class="col-12">
-        <h4>Ladder @Model.Ladder.Version <span class="small">HC = Hardcore = 1 Life</span></h4>
-    </div>
-@if(Model.Ladder != null)
-{
-    var entries = Model.Ladder.EntriesFor(Ladder.LadderFlag.CompetitiveRealLanding);
-
-    if(entries != null && entries.Count > 0)
+    @if(Model.Ladder != null)
     {
-        <div class="col-12 col-lg-6">
-            @{DisplayLadder("Competitive | Real Landing", entries); }
+        <div class="col-12">
+            <h4>Ladder @Model.Ladder.Version</h4>
         </div>
-    }
-    
-    entries = Model.Ladder.EntriesFor(Ladder.LadderFlag.Competitive);
 
-    if(entries != null && entries.Count > 0)
-    {
-        <div class="col-12 col-lg-6">
-            @{DisplayLadder("Competitive", entries); }
-        </div>
+        var entries = Model.Ladder.EntriesFor(RoundedShooter.Ladder.Flag.None);
+
+        if(entries != null && entries.Count > 0)
+        {
+            <div class="col-12 col-lg-6">
+                @{DisplayLadder("", entries); }
+            </div>
+        }
     }
-}
 </div>

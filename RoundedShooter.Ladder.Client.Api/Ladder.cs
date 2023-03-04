@@ -9,7 +9,7 @@ namespace RoundedShooter
     public class Ladder
     {
         [Flags]
-        public enum EntryFlag
+        public enum Flag
         {
             None = 0,
             //Competitive = 1 << 0,	// 1
@@ -17,20 +17,13 @@ namespace RoundedShooter
             //OneLife = 1 << 2,	    // 4
         }
 
-        [Flags]
-        public enum LadderFlag
-        {
-            None = EntryFlag.None,
-            //CompetitiveRealLanding = EntryFlag.Competitive | EntryFlag.RealLanding,
-        }
-
         public Version Version { get; set; }
 
-        public Dictionary<LadderFlag, List<Entry>> FlagEntryDictionary { get; set; }
+        public Dictionary<Flag, List<Entry>> FlagEntryDictionary { get; set; }
 
         public Ladder()
         {
-            FlagEntryDictionary = new Dictionary<LadderFlag, List<Entry>>();
+            FlagEntryDictionary = new Dictionary<Flag, List<Entry>>();
         }
 
         public class Entry
@@ -41,7 +34,7 @@ namespace RoundedShooter
 
             public long Points { get; set; }
 
-            public EntryFlag Flag { get; set; } = EntryFlag.None;
+            public Flag Flag { get; set; } = Flag.None;
 
             public Entry()
             {
@@ -70,7 +63,7 @@ namespace RoundedShooter
             return EntriesFor(ToLadderFlag(entry.Flag));
         }
 
-        public List<Entry> EntriesFor(LadderFlag ladderFlag)
+        public List<Entry> EntriesFor(Flag ladderFlag)
         {
             if (!FlagEntryDictionary.ContainsKey(ladderFlag))
             {
@@ -80,13 +73,13 @@ namespace RoundedShooter
             return FlagEntryDictionary[ladderFlag];
         }
 
-        private Ladder.LadderFlag ToLadderFlag(Ladder.EntryFlag flag)
+        private Ladder.Flag ToLadderFlag(Ladder.Flag flag)
         {
-            var ladderFlag = Ladder.LadderFlag.None;
+            var ladderFlag = Ladder.Flag.None;
 
-            if (flag.Has(Ladder.EntryFlag.None))
+            if (flag.Has(Ladder.Flag.None))
             {
-                ladderFlag = Ladder.LadderFlag.None;
+                ladderFlag = Ladder.Flag.None;
             }
 
             return ladderFlag;
@@ -112,31 +105,31 @@ namespace RoundedShooter
 
         private int AddEntry(Entry entry)
         {
-            var ladderFlag = ToLadderFlag(entry.Flag);
+            var flag = ToLadderFlag(entry.Flag);
 
-            if(EntriesFor(ladderFlag) == null)
+            if(EntriesFor(flag) == null)
             {
-                FlagEntryDictionary.Add(ladderFlag, new List<Entry>());
+                FlagEntryDictionary.Add(flag, new List<Entry>());
             }
 
-            FlagEntryDictionary[ladderFlag].Add(entry);
+            FlagEntryDictionary[flag].Add(entry);
 
-            FlagEntryDictionary[ladderFlag] = FlagEntryDictionary[ladderFlag].OrderBy(o => o.Points).ThenBy(o => o.CreatedUtc).ToList();
+            FlagEntryDictionary[flag] = FlagEntryDictionary[flag].OrderByDescending(o => o.Points).ThenBy(o => o.CreatedUtc).ToList();
 
-            return FlagEntryDictionary[ladderFlag].IndexOf(entry);
+            return FlagEntryDictionary[flag].IndexOf(entry);
         }
 
         public static string PointsDescription(long point)
         {
-            return point.ToString("N", new CultureInfo("bl-BE"));
+            return point.ToString("N0", new CultureInfo("es-ES"));
         }
     }
 
-    public static class LadderEntryExtensions
+    public static class RoundedShooterLadderEntryExtensions
     {
-        public static string PointsDescription(this Ladder.Entry entry)
+        public static string PointsDescription(this RoundedShooter.Ladder.Entry entry)
         {
-            return Ladder.PointsDescription(entry.Points);
+            return RoundedShooter.Ladder.PointsDescription(entry.Points);
         }
     }
 

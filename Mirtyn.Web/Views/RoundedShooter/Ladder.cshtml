@@ -1,4 +1,4 @@
-﻿@model LadderViewModel
+﻿@model LadderViewModel<RoundedShooter.Ladder>
 
 @{
     ViewData["Title"] = "Home Page";
@@ -18,7 +18,7 @@
             <ul>
                 @foreach (var ladder in Model.SavedLadderVersions)
                {
-                    <li><a href="/project-boost/ladder/@ladder">@ladder</a></li>
+                    <li><a href="/rounded-shooter/ladder/@ladder">@ladder</a></li>
                }
             </ul>
         }
