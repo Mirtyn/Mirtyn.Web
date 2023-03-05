@@ -22,5 +22,14 @@ namespace Mirtyn.Web
 
         private IConfiguration _configuration;
         protected IConfiguration Configuration => _configuration ?? (_configuration = HttpContext.RequestServices.GetService<IConfiguration>());
+
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            base.OnActionExecuting(context);
+
+            ViewData["HeaderTitle"] = "Welcome to Mirtyn's website!";
+            ViewData["HeaderDescription"] = "Mirtyn's website contains !";
+            ViewData["HeaderCopyright"] = $"Copyright (c) {DateTime.Today.Year} Mirtyn";
+        }
     }
 }

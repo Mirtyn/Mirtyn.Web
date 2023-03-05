@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Mirtyn.Web;
@@ -21,6 +22,14 @@ namespace Mirtyn.Web
         public ProjectBoostController()
         {
             _dataPath = Project.MapPath("~/data/project-boost/ladders/");
+        }
+
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            base.OnActionExecuting(context);
+
+            ViewData["HeaderTitle"] = "Project Boost: a game developed by Mirtyn";
+            ViewData["HeaderDescription"] = "Project Boost: a game where you get to fly a rocket as fast as possible and land safely. Project Boost is developed by Mirtyn";
         }
 
         [Route("ladder")]

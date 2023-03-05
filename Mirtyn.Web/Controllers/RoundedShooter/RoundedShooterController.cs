@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Mirtyn.Web;
@@ -22,6 +23,14 @@ namespace Mirtyn.Web
         public RoundedShooterController()
         {
             _service = new RoundedShooterServerApi(Project.MapPath("~/data/rounded-shooter/ladders/"));
+        }
+
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            base.OnActionExecuting(context);
+
+            ViewData["HeaderTitle"] = "Rounded Shooter: a game developed by Mirtyn";
+            ViewData["HeaderDescription"] = "Rounded Shooter: a game where you defeat waves of enemies as it gets increasingly harder. Rounded Shooter is developed by Mirtyn";
         }
 
         [Route("")]
@@ -75,16 +84,23 @@ namespace Mirtyn.Web
             //    return PostV010(collection, entry);
             //}
 
-            return PostV020(collection, entry);
+            Logger.LogDebug("Post v " + version);
+
+            Logger.LogDebug("Flag: " + entry.Flag.ToString());
+
+            var response = _service.Save(entry, version);
+
+            return Json(response);
+
         }
 
         [HttpPost]
         [Route("ladder/v0.2.0/post")]
         public IActionResult PostV020(IFormCollection collection, Ladder.Entry entry)
         {
-            Logger.LogDebug("PostV011: " + entry.Flag.ToString());
+            Logger.LogDebug("Post v 0.2.0");
 
-            Logger.LogDebug("entry.Flag: " + entry.Flag.ToString());
+            Logger.LogDebug("Flag: " + entry.Flag.ToString());
 
             var response = _service.Save(entry, "0.2.0");
 
