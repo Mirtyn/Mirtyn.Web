@@ -26,22 +26,32 @@ namespace Mirtyn.Web
         //    StorePath = Project.MapPath("~/data/ladders/");
         //}
 
-        public IOrderedEnumerable<Version> EnumerateSavedLadderVersions()
+        public IOrderedEnumerable<Version?> EnumerateSavedLadderVersions()
         {
-            return Directory.EnumerateFiles(StorePath, "*.json").Select(o => Version.Parse(Path.GetFileNameWithoutExtension(o))).OrderByDescending(o => o);
+            return Directory.EnumerateFiles(StorePath, "*.json")
+                .Select(o =>
+                {
+                    if (Version.TryParse(Path.GetFileNameWithoutExtension(o), out var v))
+                    {
+                        return v;
+                    }
+                    return null;
+                })
+                .Where(o => o != null)
+                .OrderByDescending(o => o);
         }
 
-        public Ladder LoadLatest()
+        public Ladder? LoadLatest()
         {
             return Load(EnumerateSavedLadderVersions().FirstOrDefault());
         }
 
-        public Ladder Load(string version)
+        public Ladder? Load(string version)
         {
             return Load(VersionStringToVersion(version));
         }
 
-        public Ladder Load(Version version)
+        public Ladder? Load(Version version)
         {
             if (version == null)
             {

@@ -1,0 +1,123 @@
+{
+  "Version": "0.2.0",
+  "FlagEntryDictionary": {
+    "None": [
+      {
+        "CreatedUtc": "2023-03-04T18:18:16.3688936Z",
+        "Name": "Steven",
+        "Points": 6124911,
+        "Flag": 0
+      },
+      {
+        "CreatedUtc": "2023-03-04T19:44:19.2989143Z",
+        "Name": "[unknown]",
+        "Points": 119939,
+        "Flag": 0
+      },
+      {
+        "CreatedUtc": "2023-03-04T19:58:10.6755224Z",
+        "Name": "[unknown]",
+        "Points": 89501,
+        "Flag": 0
+      },
+      {
+        "CreatedUtc": "2023-03-04T19:53:43.5073013Z",
+        "Name": "[unknown]",
+        "Points": 60025,
+        "Flag": 0
+      },
+      {
+        "CreatedUtc": "2023-03-04T18:07:37.5680026Z",
+        "Name": "[unknown]",
+        "Points": 52891,
+        "Flag": 0
+      },
+      {
+        "CreatedUtc": "2023-03-04T18:07:18.8767413Z",
+        "Name": "[unknown]",
+        "Points": 50857,
+        "Flag": 0
+      },
+      {
+        "CreatedUtc": "2023-03-04T18:17:08.6787978Z",
+        "Name": "[unknown]",
+        "Points": 3870,
+        "Flag": 0
+      },
+      {
+        "CreatedUtc": "2023-03-04T22:07:36.7611986Z",
+        "Name": "[unknown]",
+        "Points": 2106,
+        "Flag": 0
+      },
+      {
+        "CreatedUtc": "2023-03-04T22:04:58.5874413Z",
+        "Name": "[unknown]",
+        "Points": 2093,
+        "Flag": 0
+      },
+      {
+        "CreatedUtc": "2023-03-04T18:12:59.4376541Z",
+        "Name": "[unknown]",
+        "Points": 1893,
+        "Flag": 0
+      },
+      {
+        "CreatedUtc": "2023-03-04T19:03:59.9564258Z",
+        "Name": "[unknown]",
+        "Points": 1691,
+        "Flag": 0
+      },
+      {
+        "CreatedUtc": "2023-03-04T22:10:10.5254074Z",
+        "Name": "[unknown]",
+        "Points": 1671,
+        "Flag": 0
+      },
+      {
+        "CreatedUtc": "2023-03-04T22:02:05.2871506Z",
+        "Name": "[unknown]",
+        "Points": 1642,
+        "Flag": 0
+      },
+      {
+        "CreatedUtc": "2023-03-04T19:38:23.9543176Z",
+        "Name": "[unknown]",
+        "Points": 1566,
+        "Flag": 0
+      },
+      {
+        "CreatedUtc": "2023-03-04T22:12:04.1590341Z",
+        "Name": "[unknown]",
+        "Points": 1534,
+        "Flag": 0
+      },
+      {
+        "CreatedUtc": "2023-03-04T19:06:45.6167724Z",
+        "Name": "[unknown]",
+        "Points": 1459,
+        "Flag": 0
+      },
+      {
+        "CreatedUtc": "2023-03-04T18:23:40.0634112Z",
+        "Name": "Mirtyn",
+        "Points": -4316152,
+        "Flag": 0
+      }
+    ],
+    "Easy": [
+      {
+        "CreatedUtc": "2023-03-04T22:15:20.1100969Z",
+        "Name": "[unknown]",
+        "Points": 1590,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2023-03-04T22:13:56.4666407Z",
+        "Name": "[unknown]",
+        "Points": 1442,
+        "Flag": 1
+      }
+    ]
+  }
+}
