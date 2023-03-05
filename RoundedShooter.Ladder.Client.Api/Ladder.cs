@@ -8,13 +8,16 @@ namespace RoundedShooter
 {
     public class Ladder
     {
-        [Flags]
+        //[Flags]
         public enum Flag
         {
             None = 0,
-            //Competitive = 1 << 0,	// 1
-            //RealLanding = 1 << 1,	// 2
-            //OneLife = 1 << 2,	    // 4
+
+            Easy = 1,
+            Medium,
+            Hard,
+            Endless,
+            Master,
         }
 
         public Version Version { get; set; }
@@ -60,7 +63,7 @@ namespace RoundedShooter
 
         public List<Entry> EntriesFor(Entry entry)
         {
-            return EntriesFor(ToLadderFlag(entry.Flag));
+            return EntriesFor(entry.Flag);
         }
 
         public List<Entry> EntriesFor(Flag ladderFlag)
@@ -71,18 +74,6 @@ namespace RoundedShooter
             }
 
             return FlagEntryDictionary[ladderFlag];
-        }
-
-        private Ladder.Flag ToLadderFlag(Ladder.Flag flag)
-        {
-            var ladderFlag = Ladder.Flag.None;
-
-            if (flag.Has(Ladder.Flag.None))
-            {
-                ladderFlag = Ladder.Flag.None;
-            }
-
-            return ladderFlag;
         }
 
         private Entry FindDuplicate(Entry entry, out int index)
@@ -105,18 +96,16 @@ namespace RoundedShooter
 
         private int AddEntry(Entry entry)
         {
-            var flag = ToLadderFlag(entry.Flag);
-
-            if(EntriesFor(flag) == null)
+            if(EntriesFor(entry.Flag) == null)
             {
-                FlagEntryDictionary.Add(flag, new List<Entry>());
+                FlagEntryDictionary.Add(entry.Flag, new List<Entry>());
             }
 
-            FlagEntryDictionary[flag].Add(entry);
+            FlagEntryDictionary[entry.Flag].Add(entry);
 
-            FlagEntryDictionary[flag] = FlagEntryDictionary[flag].OrderByDescending(o => o.Points).ThenBy(o => o.CreatedUtc).ToList();
+            FlagEntryDictionary[entry.Flag] = FlagEntryDictionary[entry.Flag].OrderByDescending(o => o.Points).ThenBy(o => o.CreatedUtc).ToList();
 
-            return FlagEntryDictionary[flag].IndexOf(entry);
+            return FlagEntryDictionary[entry.Flag].IndexOf(entry);
         }
 
         public static string PointsDescription(long point)

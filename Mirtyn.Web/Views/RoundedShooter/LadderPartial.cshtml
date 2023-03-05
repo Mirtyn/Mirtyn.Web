@@ -19,18 +19,55 @@
 }
 
 <div class="row">
+
+    <div class="col-12">
+        <h4>Version @Model.Ladder.Version</h4>
+    </div>
+
     @if(Model.Ladder != null)
     {
-        <div class="col-12">
-            <h4>Ladder @Model.Ladder.Version</h4>
-        </div>
-
-        var entries = Model.Ladder.EntriesFor(RoundedShooter.Ladder.Flag.None);
+        var entries = Model.Ladder.EntriesFor(RoundedShooter.Ladder.Flag.Easy);
 
         if(entries != null && entries.Count > 0)
         {
-            <div class="col-12 col-lg-6">
-                @{DisplayLadder("", entries); }
+            <div class="col-12 col-lg-4">
+                @{DisplayLadder("Easy", entries); }
+            </div>
+        }
+    
+        entries = Model.Ladder.EntriesFor(RoundedShooter.Ladder.Flag.Medium);
+
+        if(entries != null && entries.Count > 0)
+        {
+            <div class="col-12 col-lg-4">
+                @{DisplayLadder("Medium", entries); }
+            </div>
+        }
+    
+        entries = Model.Ladder.EntriesFor(RoundedShooter.Ladder.Flag.Hard);
+
+        if(entries != null && entries.Count > 0)
+        {
+            <div class="col-12 col-lg-4">
+                @{DisplayLadder("Hard", entries); }
+            </div>
+        }
+    
+        entries = Model.Ladder.EntriesFor(RoundedShooter.Ladder.Flag.Master);
+
+        if(entries != null && entries.Count > 0)
+        {
+            <div class="col-12 col-lg-4">
+                @{DisplayLadder("Master", entries); }
+            </div>
+        }
+    
+        entries = Model.Ladder.EntriesFor(RoundedShooter.Ladder.Flag.Endless);
+
+        if(entries != null && entries.Count > 0)
+        {
+            <div class="col-12 col-lg-4">
+                @{DisplayLadder("Endless", entries); }
             </div>
         }
     }
