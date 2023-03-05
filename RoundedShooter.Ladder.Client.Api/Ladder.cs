@@ -108,9 +108,11 @@ namespace RoundedShooter
             return FlagEntryDictionary[entry.Flag].IndexOf(entry);
         }
 
+        private static IFormatProvider PointsDescriptionFormatProvider = new CultureInfo("fr-FR");
+
         public static string PointsDescription(long point)
         {
-            return point.ToString("N0", new CultureInfo("es-ES"));
+            return point.ToString("N0", PointsDescriptionFormatProvider);
         }
     }
 
