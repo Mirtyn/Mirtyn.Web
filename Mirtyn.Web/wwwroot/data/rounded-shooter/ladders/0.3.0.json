@@ -5,8 +5,18 @@
       {
         "CreatedUtc": "2023-03-04T22:20:54.6201969Z",
         "Name": "[unknown]",
+        "TimeInSeconds": 0.0,
         "Points": 1540,
         "Flag": 1
+      }
+    ],
+    "Endless": [
+      {
+        "CreatedUtc": "2023-03-05T19:51:10.4634391Z",
+        "Name": "[unknown]",
+        "TimeInSeconds": 8.519587,
+        "Points": 851,
+        "Flag": 4
       }
     ]
   }

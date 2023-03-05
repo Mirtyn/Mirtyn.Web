@@ -35,6 +35,8 @@ namespace RoundedShooter
 
             public string Name { get; set; }
 
+            public float TimeInSeconds { get; set; }
+
             public long Points { get; set; }
 
             public Flag Flag { get; set; } = Flag.None;

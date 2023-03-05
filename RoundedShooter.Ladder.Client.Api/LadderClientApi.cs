@@ -54,12 +54,11 @@ namespace RoundedShooter
 
             using (var httpClient = new HttpClient())
             {
+                var json = JsonConvert.SerializeObject(entry);
+
                 var values = new Dictionary<string, string>
                     {
-                       { "name", entry.Name },
-                       //{ "time", entry.TimeInSeconds.ToString("0.00", CultureInfo.InvariantCulture) },
-                       { "points", entry.Points.ToString() },
-                       { "flag", ((int)entry.Flag).ToString(CultureInfo.InvariantCulture) },
+                       { "json", json },
                        { "version", version },
                     };
 
@@ -73,10 +72,12 @@ namespace RoundedShooter
                         {
                             using (var streamReader = new StreamReader(stream))
                             {
-                                using (var jsonTextReader = new JsonTextReader(streamReader))
-                                {
-                                    postResponse = new JsonSerializer().Deserialize<PostResponse>(jsonTextReader);
-                                }
+                                //using (var jsonTextReader = new JsonTextReader(streamReader))
+                                //{
+                                    postResponse = JsonConvert.DeserializeObject<PostResponse>(streamReader.ReadToEnd());
+
+                                    //postResponse = new JsonSerializer().Deserialize<PostResponse>(jsonTextReader);
+                                //}
                             }
                         }
                     }

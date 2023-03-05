@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Mirtyn.Web;
+using Newtonsoft.Json;
 using RoundedShooter;
 using System;
 using System.Collections.Generic;
@@ -69,24 +70,12 @@ namespace Mirtyn.Web
 
         [HttpPost]
         [Route("ladder/post")]
-        public IActionResult Post(IFormCollection collection, Ladder.Entry entry, string version)
+        public IActionResult Post(IFormCollection collection, string json, string version)
         {
-            Logger.LogDebug("Post: " + collection["flag"] + " version: " + version);
-            Logger.LogDebug("Post: " + entry.Flag.ToString());
+            var entry = JsonConvert.DeserializeObject<Ladder.Entry> (json);
+
+            Logger.LogDebug("Post: " + entry.Flag.ToString() + " version: " + version);
             Logger.LogDebug("Post: " + collection["points"]);
-
-            var points = long.Parse(collection["points"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
-
-            entry.Points = points;
-
-            //if ("Beta 0.1.0".Equals(version, StringComparison.InvariantCultureIgnoreCase) || "0.1.0".Equals(version, StringComparison.InvariantCultureIgnoreCase))
-            //{
-            //    return PostV010(collection, entry);
-            //}
-
-            Logger.LogDebug("Post v " + version);
-
-            Logger.LogDebug("Flag: " + entry.Flag.ToString());
 
             var response = _service.Save(entry, version);
 
