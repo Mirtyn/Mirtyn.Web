@@ -116,10 +116,20 @@ namespace RoundedShooter
         {
             return point.ToString("N0", PointsDescriptionFormatProvider);
         }
+
+        public static string TimeDescription(float timeInSeconds)
+        {
+            return timeInSeconds.ToString("00.00");
+        }
     }
 
     public static class RoundedShooterLadderEntryExtensions
     {
+        public static string TimeDescription(this RoundedShooter.Ladder.Entry entry)
+        {
+            return RoundedShooter.Ladder.TimeDescription(entry.TimeInSeconds);
+        }
+
         public static string PointsDescription(this RoundedShooter.Ladder.Entry entry)
         {
             return RoundedShooter.Ladder.PointsDescription(entry.Points);

@@ -20,6 +20,26 @@
             </div>
         }
     }
+
+    void DisplayTimeLadder(string title, RoundedShooter.Ladder.Flag flag)
+    {
+        var entries = Model.Ladder.EntriesFor(flag).OrderByDescending(o => o.TimeInSeconds).ToList();
+
+        if(entries != null && entries.Count > 0)
+        {
+            <div class="col-12 col-lg-6">
+                <h5>@title</h5>
+                <ol>
+                    @foreach (var entry in entries)
+                    {
+                        <li>
+                            @entry.Name: @entry.TimeDescription() sec. (@entry.PointsDescription() pts.) | <span class="italic">@entry.CreatedUtc.ToLocalTime().ToString("dd/MM/yyyy HH:mm:ss")</span>
+                        </li>
+                    }
+                </ol>
+            </div>
+        }
+    }
 }
 
 @if(Model.Ladder != null)
@@ -28,9 +48,8 @@
         <div class="col-12">
             <h4>Version @Model.Ladder.Version</h4>
         </div>
-
+        @{DisplayTimeLadder("Endless", RoundedShooter.Ladder.Flag.Endless); }
         @{DisplayLadder("Master", RoundedShooter.Ladder.Flag.Master); }
-        @{DisplayLadder("Endless", RoundedShooter.Ladder.Flag.Endless); }
         @{DisplayLadder("Hard", RoundedShooter.Ladder.Flag.Hard); }
         @{DisplayLadder("Medium", RoundedShooter.Ladder.Flag.Medium); }
         @{DisplayLadder("Easy", RoundedShooter.Ladder.Flag.Easy); }
