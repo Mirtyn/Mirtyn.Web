@@ -23,7 +23,7 @@
 
     void DisplayTimeLadder(string title, RoundedShooter.Ladder.Flag flag)
     {
-        var entries = Model.Ladder.EntriesFor(flag).OrderByDescending(o => o.TimeInSeconds).ToList();
+        var entries = Model.Ladder.EntriesFor(flag)?.OrderByDescending(o => o.TimeInSeconds).ToList();
 
         if(entries != null && entries.Count > 0)
         {
@@ -49,7 +49,6 @@
             <h4>Version @Model.Ladder.Version</h4>
         </div>
         @{DisplayTimeLadder("Endless", RoundedShooter.Ladder.Flag.Endless); }
-        @{DisplayLadder("Master", RoundedShooter.Ladder.Flag.Master); }
         @{DisplayLadder("Hard", RoundedShooter.Ladder.Flag.Hard); }
         @{DisplayLadder("Medium", RoundedShooter.Ladder.Flag.Medium); }
         @{DisplayLadder("Easy", RoundedShooter.Ladder.Flag.Easy); }
