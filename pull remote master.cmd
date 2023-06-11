@@ -1,2 +1,2 @@
-git pull https://github.com/Mirtyn/Mirtyn.Mordor master
+git pull origin master
 PAUSE

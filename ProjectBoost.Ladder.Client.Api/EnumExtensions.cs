@@ -2,11 +2,24 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace ProjectBoost
 {
     internal static class EnumExtensions
     {
+        /// <summary>
+        /// A generic extension method that aids in reflecting 
+        /// and retrieving any attribute that is applied to an `Enum`.
+        /// </summary>
+        public static TAttribute GetAttribute<TAttribute>(this Enum enumValue) where TAttribute : Attribute
+        {
+            return enumValue.GetType()
+                .GetMember(enumValue.ToString())
+                .First()
+                .GetCustomAttribute<TAttribute>();
+        }
+
         public static T Next<T>(this T enumValue) where T : struct
         {
             // taken from https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-enum-value-in-c-sharp

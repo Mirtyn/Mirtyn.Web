@@ -3,11 +3,80 @@
   "FlagEntryDictionary": {
     "Easy": [
       {
+        "CreatedUtc": "2023-03-25T21:29:30.2928817Z",
+        "Name": "Mirtyn",
+        "TimeInSeconds": 429.00592,
+        "Points": 190566,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2023-03-26T09:12:19.5826171Z",
+        "Name": "Steven",
+        "TimeInSeconds": 356.47958,
+        "Points": 129854,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2023-03-25T21:45:51.4136424Z",
+        "Name": "Steven",
+        "TimeInSeconds": 325.0057,
+        "Points": 115002,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2023-03-25T21:21:54.8283398Z",
+        "Name": "Mirtyn",
+        "TimeInSeconds": 262.7743,
+        "Points": 112422,
+        "Flag": 1
+      },
+      {
         "CreatedUtc": "2023-03-25T20:57:16.97444Z",
         "Name": "Steven",
         "TimeInSeconds": 218.02206,
         "Points": 91272,
         "Flag": 1
+      },
+      {
+        "CreatedUtc": "2023-03-26T07:45:33.196701Z",
+        "Name": "Sucker",
+        "TimeInSeconds": 124.98735,
+        "Points": 55761,
+        "Flag": 1
+      }
+    ],
+    "Medium": [
+      {
+        "CreatedUtc": "2023-03-26T07:43:00.8705848Z",
+        "Name": "Steven",
+        "TimeInSeconds": 234.59483,
+        "Points": 141107,
+        "Flag": 2
+      }
+    ],
+    "Hard": [
+      {
+        "CreatedUtc": "2023-03-26T07:01:01.2125448Z",
+        "Name": "Mirtyn",
+        "TimeInSeconds": 363.60052,
+        "Points": 425291,
+        "Flag": 3
+      }
+    ],
+    "Endless": [
+      {
+        "CreatedUtc": "2023-03-26T07:17:06.7417333Z",
+        "Name": "Mirtyn",
+        "TimeInSeconds": 915.50494,
+        "Points": 1094120,
+        "Flag": 4
+      },
+      {
+        "CreatedUtc": "2023-03-26T09:24:14.7332089Z",
+        "Name": "Steven",
+        "TimeInSeconds": 690.56726,
+        "Points": 507570,
+        "Flag": 4
       }
     ]
   }

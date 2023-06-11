@@ -47,19 +47,6 @@ namespace Mirtyn.Web
             var ladder = service.LoadLatest();
 
             return RedirectToAction("Ladder", new { version = ladder.Version });
-
-            //var model = new LadderViewModel
-            //{
-            //    Ladder = ladder,
-            //    SavedLadderVersions = service.EnumerateSavedLadderVersions().ToList(),
-            //};
-
-            //if (model.Ladder != null)
-            //{
-            //    model.SavedLadderVersions.RemoveAll(o => o == model.Ladder.Version);
-            //}
-
-            //return View(model);
         }
 
         [Route("ladder/{version}")]
@@ -79,10 +66,21 @@ namespace Mirtyn.Web
             {
                 Ladder = ladder,
                 SavedLadderVersions = service.EnumerateSavedLadderVersions().ToList(),
+                WorldFlags = new List<Ladder.WorldFlag>(),
             };
 
             if (model.Ladder != null)
             {
+                var worldFlags = Enum.GetValues<Ladder.WorldFlag>();
+
+                foreach (var worldFlag in worldFlags)
+                {
+                    if(ladder.EntriesFor(worldFlag).Count() > 0)
+                    {
+                        model.WorldFlags.Add(worldFlag);
+                    }
+                }
+
                 model.SavedLadderVersions.RemoveAll(o => o == model.Ladder.Version);
             }
 
@@ -119,7 +117,7 @@ namespace Mirtyn.Web
                 return PostV010(collection, entry);
             }
 
-            return PostV011(collection, entry);
+            return PostVersion(entry, version);
         }
 
         [HttpPost]
@@ -141,13 +139,24 @@ namespace Mirtyn.Web
         [Route("ladder/v0.1.1/post")]
         public IActionResult PostV011(IFormCollection collection, Ladder.Entry entry)
         {
-            Logger.LogDebug("PostV011: " + entry.Flag.ToString());
+            return PostVersion(entry, "0.1.1");
+        }
 
-            Logger.LogDebug("entry.Flag: " + entry.Flag.ToString());
+        [HttpPost]
+        [Route("project-boost/ladder/v1.0.0/post")]
+        [Route("ladder/v1.0.0/post")]
+        public IActionResult PostV100(IFormCollection collection, Ladder.Entry entry)
+        {
+            return PostVersion(entry, "1.0.0");
+        }
+
+        private IActionResult PostVersion(Ladder.Entry entry, string version)
+        {
+            Logger.LogDebug(version + ": " + entry.Flag.ToString());
 
             var service = new ProjectBoostServerApi(_dataPath);
 
-            var response = service.Save(entry, "0.1.1");
+            var response = service.Save(entry, version);
 
             return Json(response);
         }
@@ -232,6 +241,75 @@ namespace Mirtyn.Web
                 Name = now,
                 TimeInSeconds = 20f + 40f * (float)random.NextDouble(),
                 Flag = ProjectBoost.Ladder.EntryFlag.Competitive | ProjectBoost.Ladder.EntryFlag.RealLanding | ProjectBoost.Ladder.EntryFlag.OneLife,
+            };
+
+            service.TryPost(entry, version, out response);
+
+            return RedirectToAction("Post");
+        }
+
+        [Route("project-boost/ladder/1.0.0/post/test")]
+        public IActionResult PostTestV100()
+        {
+            var random = new Random();
+
+            var now = DateTime.Now.ToString("U");
+
+            var version = "1.0.0";
+
+            var entry = new Ladder.Entry
+            {
+                Name = now,
+                TimeInSeconds = 20f + 40f * (float)random.NextDouble(),
+                Flag = ProjectBoost.Ladder.EntryFlag.Competitive,
+                WorldFlag = ProjectBoost.Ladder.WorldFlag.World1,
+            };
+
+            var service = new LadderClientApi(Configuration.GetValue<string>("ProjectBoostLadderPostUrl"));
+
+            service.TryPost(entry, version, out LadderClientApi.PostResponse response);
+
+
+
+
+            now = DateTime.Now.ToString("U");
+
+            entry = new Ladder.Entry
+            {
+                Name = now,
+                TimeInSeconds = 20f + 40f * (float)random.NextDouble(),
+                Flag = ProjectBoost.Ladder.EntryFlag.CompetitiveRealLanding,
+                WorldFlag = ProjectBoost.Ladder.WorldFlag.World1,
+            };
+
+            service.TryPost(entry, version, out response);
+
+
+
+
+            now = DateTime.Now.ToString("U");
+
+            entry = new Ladder.Entry
+            {
+                Name = now,
+                TimeInSeconds = 20f + 40f * (float)random.NextDouble(),
+                Flag = ProjectBoost.Ladder.EntryFlag.CompetitiveHardcore,
+                WorldFlag = ProjectBoost.Ladder.WorldFlag.World2,
+            };
+
+            service.TryPost(entry, version, out response);
+
+
+
+
+            now = DateTime.Now.ToString("U");
+
+            entry = new Ladder.Entry
+            {
+                Name = now,
+                TimeInSeconds = 20f + 40f * (float)random.NextDouble(),
+                Flag = ProjectBoost.Ladder.EntryFlag.CompetitiveRealLandingHardcore,
+                WorldFlag = ProjectBoost.Ladder.WorldFlag.World2,
             };
 
             service.TryPost(entry, version, out response);

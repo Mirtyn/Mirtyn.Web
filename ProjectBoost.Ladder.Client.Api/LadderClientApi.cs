@@ -60,6 +60,7 @@ namespace ProjectBoost
                        //{ "time", entry.TimeInSeconds.ToString("0.00", CultureInfo.InvariantCulture) },
                        { "time", entry.TimeInSeconds.ToString() },
                        { "flag", ((int)entry.Flag).ToString(CultureInfo.InvariantCulture) },
+                       { "worldflag", ((int)entry.WorldFlag).ToString(CultureInfo.InvariantCulture) },
                        { "version", version },
                     };
 

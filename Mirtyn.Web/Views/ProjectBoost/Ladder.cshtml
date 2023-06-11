@@ -1,21 +1,90 @@
 ﻿@model LadderViewModel
 
+@{ 
+    void DisplayLadder(string title, IEnumerable<Ladder.Entry> entries)
+    {
+        <h5>@title</h5>
+        if(entries != null)
+        {
+            <ol>
+                @foreach (var entry in entries)
+                {
+                    <li>
+                        @entry.Name: @entry.TimeDescription() sec. @(entry.Flag.Has(Ladder.EntryFlag.OneLife) ? "(HC)" : string.Empty)
+                    </li>
+                }
+            </ol>
+        }
+    }
+
+    void DisplayWorldLadder(string title, Ladder.WorldFlag worldFlag)
+    {
+        <div class="row">
+            @if(Model.Ladder != null)
+            {
+                var entries = Model.Ladder.EntriesFor(worldFlag, new[] { Ladder.EntryFlag.CompetitiveRealLanding, Ladder.EntryFlag.CompetitiveRealLandingHardcore }).ToList();
+
+                if(entries != null && entries.Count > 0)
+                {
+                    <div class="col-12 col-lg-6">
+                        @{DisplayLadder("Competitive | Real Landing", entries); }
+                    </div>
+                }
+    
+                entries = Model.Ladder.EntriesFor(worldFlag, new[] { Ladder.EntryFlag.Competitive, Ladder.EntryFlag.CompetitiveHardcore }).ToList();
+
+                if(entries != null && entries.Count > 0)
+                {
+                    <div class="col-12 col-lg-6">
+                        @{DisplayLadder("Competitive", entries); }
+                    </div>
+                }
+            }
+        </div>    
+    }
+}
+
+
 <div class="row">
     <div class="col-12 col-md-6 col-lg-9">
-        <partial name="LadderPartial">
-        <div>
-            <a class="btn btn-primary" href="/">Back</a>
+        <div class="row">
+            <div class="col-12">
+                <h4>Ladder @Model.Ladder.Version <span class="small">HC = Hardcore = 1 Life</span></h4>
+            </div>
+            <div class="col-12">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    @foreach(var worldFlag in Model.WorldFlags)
+                    {
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link @(Model.ActiveWorldFlag == worldFlag ? "active" : string.Empty)" data-bs-toggle="tab" data-bs-target="#tab-@worldFlag" type="button" role="tab">@worldFlag</button>
+                        </li>
+                    }
+                </ul>
+                <div class="tab-content">
+                    @foreach(var worldFlag in Model.WorldFlags)
+                    {
+                          <div class="mt-4 tab-pane fade @(Model.ActiveWorldFlag == worldFlag ? "show active" : string.Empty)" id="tab-@worldFlag" role="tabpanel">
+                                @{DisplayWorldLadder(string.Empty, worldFlag);}
+                          </div>
+                    }
+                </div>
+            </div>
+
+            <div>
+                <a class="btn btn-primary" href="/">Back</a>
+            </div>
         </div>
     </div>
+
     <div class="col-12 col-md-6 col-lg-3">
         @if(Model.SavedLadderVersions.Count > 0)
         {
             <h4>Other ladders</h4>
             <ul>
                 @foreach (var ladder in Model.SavedLadderVersions)
-               {
+                {
                     <li><a href="/project-boost/ladder/@ladder">@ladder</a></li>
-               }
+                }
             </ul>
         }
         <partial name="DownloadsPartial">

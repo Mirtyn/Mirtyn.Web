@@ -1,0 +1,181 @@
+{
+  "Version": "1.0.0",
+  "FlagEntryDictionary": {
+    "Easy": [
+      {
+        "CreatedUtc": "2023-03-27T17:03:54.7574752Z",
+        "Name": "Steven",
+        "TimeInSeconds": 468.54047,
+        "Points": 226432,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2023-04-16T09:12:04.6475355Z",
+        "Name": "Thibaut",
+        "TimeInSeconds": 170.37128,
+        "Points": 71057,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2023-03-26T14:03:49.4708915Z",
+        "Name": "Mirtyn",
+        "TimeInSeconds": 137.84605,
+        "Points": 50699,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2023-03-28T05:51:32.1108933Z",
+        "Name": "romeo",
+        "TimeInSeconds": 160.32204,
+        "Points": 45501,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2023-03-28T05:43:52.2996796Z",
+        "Name": "romeo",
+        "TimeInSeconds": 119.94073,
+        "Points": 40913,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2023-03-27T15:22:06.611001Z",
+        "Name": "cyrano",
+        "TimeInSeconds": 116.45074,
+        "Points": 40870,
+        "Flag": 1
+      },
+      {
+        "CreatedUtc": "2023-03-28T05:48:07.8643024Z",
+        "Name": "romeo",
+        "TimeInSeconds": 125.88802,
+        "Points": 36192,
+        "Flag": 1
+      }
+    ],
+    "Medium": [
+      {
+        "CreatedUtc": "2023-03-28T19:38:18.2998428Z",
+        "Name": "Steven",
+        "TimeInSeconds": 214.40413,
+        "Points": 136114,
+        "Flag": 2
+      },
+      {
+        "CreatedUtc": "2023-03-26T14:33:37.8559962Z",
+        "Name": "Mirtyn",
+        "TimeInSeconds": 237.34647,
+        "Points": 95657,
+        "Flag": 2
+      }
+    ],
+    "Hard": [
+      {
+        "CreatedUtc": "2023-03-29T08:32:11.104812Z",
+        "Name": "Mirtyn",
+        "TimeInSeconds": 485.43048,
+        "Points": 686908,
+        "Flag": 3
+      },
+      {
+        "CreatedUtc": "2023-03-28T19:34:10.6875702Z",
+        "Name": "Steven",
+        "TimeInSeconds": 364.19955,
+        "Points": 360277,
+        "Flag": 3
+      },
+      {
+        "CreatedUtc": "2023-03-26T14:40:30.0485234Z",
+        "Name": "Mirtyn",
+        "TimeInSeconds": 390.3353,
+        "Points": 333483,
+        "Flag": 3
+      }
+    ],
+    "Endless": [
+      {
+        "CreatedUtc": "2023-03-29T07:52:42.6822509Z",
+        "Name": "Mirtyn",
+        "TimeInSeconds": 988.20593,
+        "Points": 1199528,
+        "Flag": 4
+      },
+      {
+        "CreatedUtc": "2023-03-29T07:19:38.5083593Z",
+        "Name": "romeo",
+        "TimeInSeconds": 913.26086,
+        "Points": 953131,
+        "Flag": 4
+      },
+      {
+        "CreatedUtc": "2023-03-26T18:16:29.8769529Z",
+        "Name": "Steven",
+        "TimeInSeconds": 852.03436,
+        "Points": 770584,
+        "Flag": 4
+      },
+      {
+        "CreatedUtc": "2023-03-27T19:30:27.4503684Z",
+        "Name": "Steven",
+        "TimeInSeconds": 879.7613,
+        "Points": 758555,
+        "Flag": 4
+      },
+      {
+        "CreatedUtc": "2023-03-27T15:36:55.7028627Z",
+        "Name": "cyranovanparys",
+        "TimeInSeconds": 871.1529,
+        "Points": 751310,
+        "Flag": 4
+      },
+      {
+        "CreatedUtc": "2023-05-28T14:01:04.7163816Z",
+        "Name": "Steven",
+        "TimeInSeconds": 872.99756,
+        "Points": 730803,
+        "Flag": 4
+      },
+      {
+        "CreatedUtc": "2023-03-27T10:39:35.3132294Z",
+        "Name": "romeo",
+        "TimeInSeconds": 685.9936,
+        "Points": 601885,
+        "Flag": 4
+      },
+      {
+        "CreatedUtc": "2023-03-26T18:01:33.921621Z",
+        "Name": "Steven",
+        "TimeInSeconds": 686.8015,
+        "Points": 575091,
+        "Flag": 4
+      },
+      {
+        "CreatedUtc": "2023-03-26T15:07:58.1148938Z",
+        "Name": "Mirtyn",
+        "TimeInSeconds": 646.079,
+        "Points": 469158,
+        "Flag": 4
+      },
+      {
+        "CreatedUtc": "2023-04-01T14:32:13.8047801Z",
+        "Name": "Jos",
+        "TimeInSeconds": 620.15857,
+        "Points": 425505,
+        "Flag": 4
+      },
+      {
+        "CreatedUtc": "2023-03-27T08:25:12.3795327Z",
+        "Name": "romeo",
+        "TimeInSeconds": 445.41837,
+        "Points": 291730,
+        "Flag": 4
+      },
+      {
+        "CreatedUtc": "2023-05-28T13:24:22.7014624Z",
+        "Name": "test",
+        "TimeInSeconds": 19.827442,
+        "Points": 10037,
+        "Flag": 4
+      }
+    ]
+  }
+}

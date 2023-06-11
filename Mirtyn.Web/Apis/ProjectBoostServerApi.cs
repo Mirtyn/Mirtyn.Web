@@ -67,23 +67,66 @@ namespace Mirtyn.Web
 
             var ladder = JsonConvert.DeserializeObject<Ladder>(File.ReadAllText(path));
 
-            ConvertLadder(ladder);
+            //ConvertLadder(ladder);
 
             return ladder;
         }
 
         private void ConvertLadder(Ladder ladder)
         {
-            if (ladder.Entries != null && ladder.Entries.Count > 0 && (ladder.FlagEntryDictionary == null || ladder.FlagEntryDictionary.Count == 0))
-            {
-                ladder.FlagEntryDictionary = new Dictionary<Ladder.LadderFlag, List<Ladder.Entry>>();
+            //if (ladder.Entries != null && ladder.Entries.Count > 0 && (ladder.FlagEntryDictionary == null || ladder.FlagEntryDictionary.Count == 0))
+            //{
+            //    ladder.FlagEntryDictionary = new Dictionary<Ladder.LadderFlag, List<Ladder.Entry>>();
 
-                foreach (var entry in ladder.Entries)
+            //    foreach (var entry in ladder.Entries)
+            //    {
+            //        ladder.AddUniqueEntry(entry);
+            //    }
+
+            //    ladder.Entries = null;
+            //}
+
+            if ((ladder.Entries == null || ladder.Entries.Count == 0) && ladder.FlagEntryDictionary != null)
+            {
+                ladder.Entries = new List<Ladder.Entry>();
+
+                if (ladder.FlagEntryDictionary.ContainsKey(Ladder.LadderFlag.Competitive))
                 {
-                    ladder.AddUniqueEntry(entry);
+                    foreach (var entry in ladder.FlagEntryDictionary[Ladder.LadderFlag.Competitive])
+                    {
+                        var hc = entry.Flag.Has(Ladder.EntryFlag.OneLife);
+
+                        entry.Flag = Ladder.EntryFlag.Competitive;
+
+                        if (hc)
+                        {
+                            entry.Flag = entry.Flag.Add(Ladder.EntryFlag.OneLife);
+                        }
+
+                        ladder.AddUniqueEntry(entry);
+                    }
                 }
 
-                ladder.Entries = null;
+                if (ladder.FlagEntryDictionary.ContainsKey(Ladder.LadderFlag.CompetitiveRealLanding))
+                {
+                    foreach (var entry in ladder.FlagEntryDictionary[Ladder.LadderFlag.CompetitiveRealLanding])
+                    {
+                        var hc = entry.Flag.Has(Ladder.EntryFlag.OneLife);
+
+                        entry.Flag = Ladder.EntryFlag.CompetitiveRealLanding;
+
+                        if(hc)
+                        {
+                            entry.Flag = entry.Flag.Add(Ladder.EntryFlag.OneLife);
+                        }
+
+                        ladder.AddUniqueEntry(entry);
+                    }
+                }
+
+                ladder.FlagEntryDictionary = null;
+
+                Save(ladder);
             }
         }
 
@@ -100,10 +143,10 @@ namespace Mirtyn.Web
             {
                 ladder = new Ladder { Version = version };
             }
-            else
-            {
-                ConvertLadder(ladder);
-            }
+            //else
+            //{
+            //    ConvertLadder(ladder);
+            //}
 
             var response = new LadderClientApi.PostResponse
             {
